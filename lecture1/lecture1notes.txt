@@ -1,0 +1,36 @@
+Notes: PyPI is the official Python package repository. 
+Installing from PyPI is done by using pip install <package-name>
+Pip is a package manager, a TOOL that simplifies the process of installing, and maintaining third party modules and libraries such that are not part of the core Python libraries.
+Pip looks for packages from a number of pages, such as from: PyPI, other indexes, using requirement specifiers, from version control projects, local projects.
+
+
+Notes: A virtual environment is important because it keeps all your “tools”, ie. modules, libraries, separate from each project.
+It avoids conflicts, two projects might need different versions of a tool. With a virtual environment you are able to have both versions separate so they don't have conflicts.
+It protects your global python environment from too much cluttering. 
+It can easily be reproduced through pip install -r requirement.txt
+-r option installs the requirements from a file.
+There are many options to keep in mind with pip install. But most important are -r and -upgrade.
+
+Notes: To create a virtual environment, python needs to run a module named venv.
+A venv contains a python interpreter, software files like libraries and binaries. 
+They are not checked by Git.
+It is simple to delete, and recreate, however, it is not considered movable because the venv stores teh absolute path into interpreter and scripts. When moved, these paths will no longer be valid.
+To create a venv in python, run python3 -m venv venv. It runs the venv module and creates a venv directory that stores it.
+To tell the operating system that you want to use the venv, you need to run the contents of a binary in the .venv folder (assuming that is where you are storing the virtual environment).
+This is done using source .venv/bin/activate
+
+Notes: Flask has numerous dependencies such as: Werkzeug, Blinker, Click, ItsDangerous, Jinja2, and Markupsafe.
+Werkzeug implements WSGI, the standard python interface between applications and servers.
+Jinja2 is a template language that renders the pages that your application serves.
+Markupsafe is a Jinja2 dependency. It escapes untrusted inputs when rendering templates to prevent security vulnerabilities like cross-site scripting (XSS) attacks.
+ItsDangerous securely signs data to ensure its integrity. It is used to protect Flask’s session cookie.
+Click is a framework for writing command line applications. It provides the flask command and allows adding custom management commands.
+Blinkers provides a fast and simple way to implement object-to-object and broadcasting signaling. It enables the creation of signals that can be emitted when a certain event occurs.
+
+Notes: The flask run command looks for a Flask application instance in the module addressed by the FLASK_APP environment variable.
+The command sets up a web server that is configured to forward requests to this application.
+After the server initializes, it waits for client connection.
+When an application runs locally, it means that your workstation acts like a web server, serving content and handling requests just like a production server. This local server is accessed through the “localhost” address which tends to be 127.0.0.1.
+The address ranges from 127.0.0.0 to 127.255.255.255 in part of the loopback address range that is reserved for internal testing and diagnostics on a local machine.
+Applications deployed on production web servers are typically listened to through the port 433 or 80 if they do not implement encryption. But flask uses port 5000 for deployment environment. (433 https, 80 http, 5000 development environments and UPnP)
+The application will map the output of the view only function to the routes.
