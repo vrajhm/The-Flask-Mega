@@ -1,1 +1,1 @@
-from lecture1 import app
+from lecture2 import app
