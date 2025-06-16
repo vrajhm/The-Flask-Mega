@@ -1,0 +1,10 @@
+Notes: Jinja2 has conditional statements, loops, and etc. to work with variables that are to be rendered. These are called control statements.
+{% if variable %}
+		<blah></blah>
+	{% else %}
+		<blah1></blah1>
+	{% endif %}
+For loop is just {% for variable in list %}, and then insert variable.
+Jinja2 supports template inheritance through the blocks. {% block hello %}<p>Hello World!</p>{% end block %}. To inherit template, {% extends “base.html” %}
+To insert block {% block hello %}{% end block %}
+
